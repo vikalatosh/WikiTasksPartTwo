@@ -2,7 +2,7 @@ using System;
 
 namespace WikiTasksPartTwo
 {
-    public class Program
+    public class Struct
     {
         public static void Main(string[] args)
         {
