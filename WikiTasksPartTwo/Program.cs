@@ -6,12 +6,18 @@ namespace WikiTasksPartTwo
     {
         public static void Main(string[] args)
         {
-            Student[] students = new Student[5];
+            Student[] students = new Student[10];
             students[0] = new Student("Латош", "В.", "QA10", new[] {1, 1, 1, 1, 1});
             students[1] = new Student("Холова", "К.", "QA1", new[] {3, 3, 3, 3, 3}); 
             students[2] = new Student("Заяц", "С.", "QA8", new[] {2, 2, 2, 2, 2});
             students[3] = new Student("Рак", "Д.", "QA5", new[] {5, 5, 5, 4, 5});
             students[4] = new Student("Иванов", "И.", "QA2", new[] {0, 0, 0, 0, 0});
+            students[5] = new Student("Сидоров", "В.", "QA10", new[] {1, 2, 3, 5, 4});
+            students[6] = new Student("Петров", "К.", "QA1", new[] {3, 2, 4, 5, 3}); 
+            students[7] = new Student("Васильев", "С.", "QA8", new[] {0, 5, 4, 3, 2});
+            students[8] = new Student("Сергеев", "Д.", "QA5", new[] {5, 5, 5, 4, 5});
+            students[9] = new Student("Пушкин", "И.", "QA2", new[] {0, 0, 5, 0, 0});
+            
             foreach (Student s in students)
             {
                 s.DisplayInfo();
