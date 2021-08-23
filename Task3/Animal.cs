@@ -1,4 +1,6 @@
-﻿namespace Task3
+﻿using System;
+
+namespace Task3
 {
     public abstract class Animal
     {
@@ -15,6 +17,6 @@
             this.amountOfFood = amountOfFood;
         }
 
-        public abstract int food();
+        public abstract int Food();
     }
 }

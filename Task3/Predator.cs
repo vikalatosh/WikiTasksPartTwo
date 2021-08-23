@@ -9,7 +9,7 @@
             this.amountOfFood = amountOfFood;
         }
 
-        public override int food()
+        public override int Food()
         {
             amountOfFood = weight / 15;
             typeOfFood = "мясо/рыба";
