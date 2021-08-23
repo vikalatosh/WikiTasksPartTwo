@@ -8,10 +8,11 @@
 
         public string Name { get; set; }
 
-        public Animal(string name, int weight)
+        public Animal(string name, int weight, int amountOfFood)
         {
             Name = name;
             this.weight = weight;
+            this.amountOfFood = amountOfFood;
         }
 
         public abstract int food();

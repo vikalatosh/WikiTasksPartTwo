@@ -1,13 +1,12 @@
-﻿using System;
-
-namespace Task3
+﻿namespace Task3
 {
     public class Predator : Animal
     {
-        public Predator(string name, int weight) : base(name, weight)
+        public Predator(string name, int weight, int amountOfFood) : base(name, weight, amountOfFood)
         {
             Name = name;
             this.weight = weight;
+            this.amountOfFood = amountOfFood;
         }
 
         public override int food()

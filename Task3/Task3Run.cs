@@ -1,5 +1,6 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Task3
 {
@@ -7,20 +8,39 @@ namespace Task3
     {
         public static void Main(string[] args)
         {
-            ArrayList list = new ArrayList();
-            list.Add(new Herbivore("elephant", 2500));
-            list.Add(new Predator("tiger", 150));
-            list.Add(new Predator("lion", 200));
-            list.Add(new Predator("wolf", 90));
-            list.Add(new Predator("hyena", 100));
-            list.Add(new Omnivore("bear", 300));
+            List<Animal> list = new List<Animal>();
+            list.Add(new Predator("tiger", 150, 0));
+            list.Add(new Predator("wolf", 90, 0));
+            list.Add(new Herbivore("elephant", 2500, 0));
+            list.Add(new Predator("hyena", 100, 0));
+            list.Add(new Predator("lion", 200, 0));
+            list.Add(new Omnivore("bear", 300, 0));
 
-            foreach (Animal o in list)
+            foreach (Animal a in list)
             {
-                o.food();
+                a.food();
                 // идентификатор - это класс животного???? 
-                Console.WriteLine($"{o}, {o.Name}, тип пищи - {o.typeOfFood}, количество - {o.amountOfFood} кг/день");
+                Console.WriteLine($"{a}, {a.Name}, тип пищи - {a.typeOfFood}, количество - {a.amountOfFood} кг/день");
             }
+            Console.WriteLine("-------------------------------------------");
+
+            var sortedAnimals = from o in list
+                                orderby o.amountOfFood descending, o.Name
+                                select o;
+            foreach (Animal a in sortedAnimals)
+            {
+                Console.WriteLine($"{a}, {a.Name}, тип пищи - {a.typeOfFood}, количество - {a.amountOfFood} кг/день");
+            }
+            Console.WriteLine("-------------------------------------------");
+
+            var result = sortedAnimals.Take(5);
+            foreach (var i in result)
+                Console.WriteLine(i.Name);
+            Console.WriteLine("-------------------------------------------");
+
+            result = sortedAnimals.Skip(sortedAnimals.Count() - 3);
+            foreach (var i in result)
+                Console.WriteLine(i.Name);
             Console.WriteLine("-------------------------------------------");
         }
     }
